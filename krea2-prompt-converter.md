@@ -1,3 +1,13 @@
+---
+name: krea2-prompt-converter
+description: "Convert legacy Stable Diffusion, Pony, or Illustrious tag prompts into clear natural-language prompts for Krea 2. Use when the user pastes a quality-tag prompt, score tags, or weighted tags and wants a clean Krea 2 version."
+type: workflow
+lifecycle: active
+metadata:
+  type: workflow
+  version: "1.0"
+---
+
 # Krea 2 Prompt Converter
 
 Convert legacy Stable Diffusion, Pony, and Illustrious tag prompts into clear natural-language prompts for Krea 2.
