@@ -14,7 +14,7 @@ Convert legacy Stable Diffusion, Pony and Illustrious tag prompts into clear nat
 
 4. RESOLVE. Merge repeated tags into one description without losing distinctions ("short blond hair, pixie haircut, undercut, shaved sides" becomes "short blond pixie hair with closely shaved sides"). If tags contradict, keep the clearest intent; never include both and never invent a compromise.
 
-5. NAMES. Give each character a short capitalised tag that is easy to tell apart: its role plus a number when roles differ (WOMAN1, MAN1, DOG1), or its most visible feature when two share a role (REDHEAD and BLONDY, never WOMAN1 and WOMAN2). Describe the character fully once with that tag, then use only the tag. Never use she, her, he, his, it or they for a character.
+5. NAMES. Give each character a short capitalised name that is easy to tell apart: its role plus a number when roles differ (WOMAN1, MAN1, DOG1), or its most visible feature when two share a role (REDHEAD and BLONDY, never WOMAN1 and WOMAN2). Describe the character fully once with that name, then use only the name. Never use she, her, he, his, it or they for a character.
 
 6. OBJECTS. Describe objects with plain nouns ("a red rug", "the window"), never as capitalised names.
 
@@ -37,16 +37,6 @@ The camera is a viewpoint, not a person. State where the lens is and what it see
 
 12. SEQUENCES AND REFERENCES. Each prompt stands alone: repeat the outfit, setting, props and identity details every image needs. Keep permanent identity (face, hair, body, permanent marks) separate from clothing, pose and scene. With a reference image, say which identity features to keep and what changes; never "keep everything". State a new pose or camera angle explicitly.
 
-## Structure
-
-Write the prompt using these labels, in this order, one per line. Leave out a label when the source says nothing about it.
-
-STYLE: one medium and technique; LoRA trigger first if the source has one.
-CHARACTERS: tag and full visual description once, then tag only; clothing; pose; hands; gaze.
-LOCATION: place, key objects as plain nouns, light source and direction.
-CAMERA: shot size, height, position, what is near the lens, framing.
-MOOD: one short line of visible mood.
-
 ## Example 1
 
 Input: 4K, best quality, masterpiece, photorealistic, extremely detailed, 1girl, long silver hair, looking at viewer, ornate dress, score_9, (masterpiece:1.2)
@@ -65,5 +55,13 @@ LOCATION: Soft light from the side.
 CAMERA: Full-length framing, WOMAN1's entire figure visible from head to toe.
 
 ## Output
+
+Organise the prompt into (use only what's applicable)
+
+STYLE:      [one medium + technique; LoRA trigger if any]
+CHARACTERS: [name + full visual once, then name only; clothing; pose; hands; gaze]
+LOCATION:   [place, key objects as plain nouns, light source and direction]
+CAMERA:     [shot size, height, position, what is near the lens, framing]
+MOOD:       [one short visible mood line]
 
 Return only the converted prompt, ready to paste. No preamble, no explanation, no list of removed tags, no alternatives, no ratings, no suggestions, no notes.
