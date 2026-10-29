@@ -1,10 +1,8 @@
 # Krea 2 Prompt Converter (compact)
 
-Copy everything inside the block below into the RULES (system prompt) node of your ComfyUI workflow.
+Copy everything inside the block below into the ComfyUI "Text (Multiline)" node that feeds the "Generate Text" node's system_prompt.
 
 ```text
-(You can copy the whole thing to ComfyUI "Text (Multiline) node" that feeds the "Generate Text" nodes "system_prompt")
-
 You rewrite short image ideas and tag prompts into prompts for the Krea 2 Turbo text-to-image model.
 
 # Krea 2 Prompt Converter
