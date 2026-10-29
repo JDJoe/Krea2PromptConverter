@@ -61,15 +61,26 @@ When tags conflict, do not blindly include both and do not invent a compromise. 
 
 ### 5. Write clear natural language
 
-- Lead with the subject.
-- Use one or two coherent paragraphs, or short labeled lines when that improves control.
+- Follow the section order in "Prompt structure" below: STYLE first, then CHARACTERS, LOCATION, CAMERA, MOOD.
+- Inside each section, write short coherent sentences, not tag lists.
 - Turn tag lists into descriptions of visible objects, features, materials, and relationships.
 - Prefer concrete wording over generic praise: "oxblood leather" is more informative than "beautiful red material."
 - Describe the actual lighting when specified: for example, "soft light from the left."
 - Keep the original photographic, illustrative, or stylized intent.
 - Do not add ornate prose just to make the prompt sound polished.
 
-### 6. Translate camera and composition tags into what the camera sees
+### 6. Name characters with easy tags, never pronouns
+
+Give each character a short capitalised tag that is easy to tell apart and easy to debug:
+
+- Role plus a number when the roles differ: `WOMAN1`, `MAN1`, `DOG1`.
+- The most visible feature when two characters share a role: `REDHEAD` and `BLONDY`, not `WOMAN1` and `WOMAN2`.
+
+Describe each character fully once with the tag ("WOMAN1 is a woman with long silver hair…"), then use only the tag ("WOMAN1 looks…", "WOMAN1's hand…"). Never use she, her, he, his, it or they for a character. A tag on its own renders nothing; it works only after the full description.
+
+Objects are never tagged like characters. Describe them with plain nouns: "a red rug", "the window", not "The Rug".
+
+### 7. Translate camera and composition tags into what the camera sees
 
 Describe the framing and viewpoint in concrete terms when the source provides them:
 
@@ -84,19 +95,19 @@ Use only the details supported by the source. Do not turn a generic full-body ta
 
 Remember: the camera is a viewpoint, not a person. State where the lens is and what it sees. Do not invent an observer or another character to explain a camera angle.
 
-### 7. Describe materials as part of visible objects
+### 8. Describe materials as part of visible objects
 
 A list such as `silk, sheer, lace, leather, fur, feathers, stockings, transparent robe` should be reorganized into a coherent description of the garment and accessories when the source makes their relationships clear.
 
 Do not assume every material belongs to the same item. If the source does not say whether feathers are trim, a separate accessory, or part of a garment, choose neutral wording rather than inventing a specific construction.
 
-### 8. Keep the prompt focused
+### 9. Keep the prompt focused
 
 There is no universal word-count limit that guarantees a good result. As a practical starting point, remove repetition and aim for a concise prompt in which each sentence contributes useful visual information. Short prompts can work well for exploration; more controlled scenes may need more detail.
 
 Do not cut important details merely to hit a word target. Stop adding text when it repeats existing information or introduces unsupported ideas.
 
-### 9. Treat negative prompts cautiously
+### 10. Treat negative prompts cautiously
 
 Translate useful positive intent into a description of what should be visible. Avoid long lists of things that should not appear. Do not promise that negative wording will reliably suppress unwanted elements.
 
@@ -110,9 +121,12 @@ If a source prompt relies on a specific exclusion, preserve it only when it is i
 
 **Output (Krea 2)**
 
-A woman with long silver hair looks directly into the camera, wearing an ornate dark gown with gold embroidery and translucent sleeves. Soft light comes from the left. Medium close-up framing with shallow depth of field.
+```text
+STYLE: Photorealistic photograph.
+CHARACTERS: WOMAN1 is a woman with long silver hair wearing an ornate dress. WOMAN1 looks directly into the camera.
+```
 
-The output removes repetitive quality tags while preserving the subject, hair, gaze, dress, lighting, and framing. It does not add a new setting or expression.
+The output removes the quality and score tags and keeps the medium, hair, dress and gaze. The source gives no setting, lighting or framing, so LOCATION, CAMERA and MOOD are left out rather than invented.
 
 ## Second example: preserve the details
 
@@ -122,21 +136,24 @@ The output removes repetitive quality tags while preserving the subject, hair, g
 
 **Output (Krea 2)**
 
-A slim, athletic woman with short blond pixie hair and closely shaved sides wears a long, transparent robe with sheer silk and lace details, leather accents, fur, and feather elements, paired with stockings. Soft side lighting. Full-length framing, with the entire figure visible from head to toe.
+```text
+CHARACTERS: WOMAN1 is a slim, athletic woman with short blond pixie hair and closely shaved sides, wearing a long, transparent robe of sheer silk and lace, with leather accents, fur and feather details, and stockings.
+LOCATION: Soft light from the side.
+CAMERA: Full-length framing, WOMAN1's entire figure visible from head to toe.
+```
 
-This version combines overlapping tags but does not invent a pose, facial expression, location, or additional clothing.
+This version combines overlapping tags but does not invent a pose, expression, location, style or additional clothing. "best quality" is noise, so there is no STYLE line.
 
-## Optional structure for complex prompts
+## Prompt structure
 
-Use only the labels that help organize the source. Do not force every prompt into this template.
+Write the prompt with these labels, in this order, one per line. Leave out a label when the source says nothing about it; never fill it with "unspecified" or a guess.
 
 ```text
-SUBJECT: Who or what is visible, including important appearance details.
-CAMERA: Viewpoint, height, angle, distance, and framing.
-LOCATION: Setting and background details present in the source.
-ACTION: What the subject does, including contact with named objects or people.
-LIGHTING: Light source, direction, softness, and color when specified.
-STYLE: The intended medium or visual treatment, when specified.
+STYLE:      [one medium + technique; LoRA trigger if any]
+CHARACTERS: [tag + full visual once, then tag only; clothing; pose; hands; gaze]
+LOCATION:   [place, key objects as plain nouns, light source and direction]
+CAMERA:     [shot size, height, position, what is near the lens, framing]
+MOOD:       [one short visible mood line]
 ```
 
 ## Multi-image sequences and references
@@ -171,6 +188,8 @@ If a significant contradiction prevents a faithful conversion, ask one concise q
 - [ ] Repeated details are consolidated without losing distinctions.
 - [ ] Contradictions are handled conservatively.
 - [ ] Camera, framing, materials, and lighting are clear where specified.
+- [ ] Sections follow STYLE, CHARACTERS, LOCATION, CAMERA, MOOD, with empty ones left out.
+- [ ] Every character has an easy tag, is described once, and is never referred to by a pronoun.
 - [ ] The result reads naturally and is easy to paste into Krea 2.
 - [ ] The prompt is concise without sacrificing important information.
 
