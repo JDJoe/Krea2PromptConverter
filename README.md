@@ -1,6 +1,7 @@
 # Krea 2 Prompt Converter
 
-A short skill document that turns legacy Stable Diffusion / Pony / Illustrious tag prompts into clean natural-language prompts that Krea 2 actually follows.
+A short skill document that turns legacy Stable Diffusion / Pony / Illustrious tag prompts into clean natural-language prompts that Krea 2 (and MOSS Image) actually follows.
+Set the type in Node #1 (Load CLIP). 
 
 # Why use it
 
