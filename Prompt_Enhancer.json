@@ -1,0 +1,358 @@
+{
+  "id": "fd466dc0-83da-4ef3-9c7d-20754b8c5ff9",
+  "revision": 0,
+  "last_node_id": 6,
+  "last_link_id": 3,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "CLIPLoader",
+      "pos": [
+        0,
+        0
+      ],
+      "size": [
+        380,
+        110
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            1
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        },
+        "cnr_id": "comfy-core",
+        "ver": "0.25.0"
+      },
+      "widgets_values": [
+        "qwen3vl_4b_fp8_scaled.safetensors",
+        "moss_image",
+        "default"
+      ],
+      "widgets_values_named": {
+        "clip_name": "qwen3vl_4b_fp8_scaled.safetensors",
+        "type": "moss_image",
+        "device": "default"
+      },
+      "ndSuperSelectorEnabled": false,
+      "ndPowerEnabled": false,
+      "extensions": {
+        "ndSuperSelectorEnabled": false,
+        "ndPowerEnabled": false
+      }
+    },
+    {
+      "id": 2,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        0,
+        160
+      ],
+      "size": [
+        396.6916564941406,
+        560
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "title": "RULES (system prompt) - paste your Krea2 rules here",
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        },
+        "cnr_id": "comfy-core",
+        "ver": "0.25.0"
+      },
+      "widgets_values": [
+        "You rewrite short image ideas into prompts Image model. \n# Krea 2 Prompt Converter\n\nWrite clear natural-language prompts. Faithful conversion, not creative rewriting.\n\n## Rules\n\n1. PRESERVE. Keep every meaningful visual detail: subject and identity features, body and anatomy, hair, expression, pose, gaze, clothing, accessories, materials, setting, objects, framing, camera angle, lighting, style, and actions. Keep distinctive wording; do not flatten it into generic terms.\n\n2. REMOVE NOISE. Drop quality and score tags (masterpiece, best quality, 4K, 8K, ultra detailed, score_9), repeated synonyms, and all weighting syntax like (tag:1.2), ((tag)), [[tag]]. Keep emphatic words that describe something visible. Keep style words (photorealistic, oil painting, watercolor) when they define the medium.\n\n3. DO NOT INVENT. Never add a setting, prop, pose, expression, gaze, clothing, camera effect or style that the source does not state. No filler like \"captivating\" or \"cinematic atmosphere\".\n\n4. RESOLVE. Merge repeated tags into one description. If tags contradict, keep the more specific one.\n\n5. WRITE PROSE. Short, plain sentences. Subject first, then clothing, setting, action, lighting, framing.\n\n6. CAMERA. Turn camera tags into what the camera sees: \"full shot\" means the whole figure is visible head to toe; \"from below\" means a low angle looking up.\n\n7. MATERIALS. Attach materials to the object they belong to (\"a robe of sheer silk\"), not as loose words.\n\n8. NEGATIVES. Describe what should be visible instead of listing what should not appear.\n\n## Example 1\n\nInput: 4K, best quality, masterpiece, photorealistic, extremely detailed, 1girl, long silver hair, looking at viewer, ornate dress, score_9, (masterpiece:1.2)\n\nOutput: A woman with long silver hair looks directly into the camera, wearing an ornate dress. Photorealistic.\n\n## Example 2\n\nInput: best quality, 1girl, short blond pixie haircut, undercut, skinny body, fit body, long transparent robe, silk, sheer, lace, leather, fur, feathers, stockings, side soft light, full shot, uncropped\n\nOutput: A slim, athletic woman with short blond pixie hair and closely shaved sides wears a long, transparent robe of sheer silk and lace, with leather accents, fur and feather details, and stockings. Soft side lighting. Full-length framing, the entire figure visible from head to toe.\n\n## Output\n\nOrganise the prompt into (use only what's applicable)\n\nSTYLE:      [one medium + technique; LoRA trigger if any]\n\nCHARACTERS: [name + full visual once, then name only; clothing; pose; hands; gaze]\n\nLOCATION:   [place, key objects as plain nouns, light source and direction]\n\nCAMERA:     [shot size, height, position, what is near the lens, framing]\n\nMOOD:       [one short visible mood line]\n\n\nReturn only the converted prompt, ready to paste. No preamble, no explanation, no list of removed tags, no alternatives, no notes."
+      ],
+      "widgets_values_named": {
+        "value": "You rewrite short image ideas into prompts Image model. \n# Krea 2 Prompt Converter\n\nWrite clear natural-language prompts. Faithful conversion, not creative rewriting.\n\n## Rules\n\n1. PRESERVE. Keep every meaningful visual detail: subject and identity features, body and anatomy, hair, expression, pose, gaze, clothing, accessories, materials, setting, objects, framing, camera angle, lighting, style, and actions. Keep distinctive wording; do not flatten it into generic terms.\n\n2. REMOVE NOISE. Drop quality and score tags (masterpiece, best quality, 4K, 8K, ultra detailed, score_9), repeated synonyms, and all weighting syntax like (tag:1.2), ((tag)), [[tag]]. Keep emphatic words that describe something visible. Keep style words (photorealistic, oil painting, watercolor) when they define the medium.\n\n3. DO NOT INVENT. Never add a setting, prop, pose, expression, gaze, clothing, camera effect or style that the source does not state. No filler like \"captivating\" or \"cinematic atmosphere\".\n\n4. RESOLVE. Merge repeated tags into one description. If tags contradict, keep the more specific one.\n\n5. WRITE PROSE. Short, plain sentences. Subject first, then clothing, setting, action, lighting, framing.\n\n6. CAMERA. Turn camera tags into what the camera sees: \"full shot\" means the whole figure is visible head to toe; \"from below\" means a low angle looking up.\n\n7. MATERIALS. Attach materials to the object they belong to (\"a robe of sheer silk\"), not as loose words.\n\n8. NEGATIVES. Describe what should be visible instead of listing what should not appear.\n\n## Example 1\n\nInput: 4K, best quality, masterpiece, photorealistic, extremely detailed, 1girl, long silver hair, looking at viewer, ornate dress, score_9, (masterpiece:1.2)\n\nOutput: A woman with long silver hair looks directly into the camera, wearing an ornate dress. Photorealistic.\n\n## Example 2\n\nInput: best quality, 1girl, short blond pixie haircut, undercut, skinny body, fit body, long transparent robe, silk, sheer, lace, leather, fur, feathers, stockings, side soft light, full shot, uncropped\n\nOutput: A slim, athletic woman with short blond pixie hair and closely shaved sides wears a long, transparent robe of sheer silk and lace, with leather accents, fur and feather details, and stockings. Soft side lighting. Full-length framing, the entire figure visible from head to toe.\n\n## Output\n\nOrganise the prompt into (use only what's applicable)\n\nSTYLE:      [one medium + technique; LoRA trigger if any]\n\nCHARACTERS: [name + full visual once, then name only; clothing; pose; hands; gaze]\n\nLOCATION:   [place, key objects as plain nouns, light source and direction]\n\nCAMERA:     [shot size, height, position, what is near the lens, framing]\n\nMOOD:       [one short visible mood line]\n\n\nReturn only the converted prompt, ready to paste. No preamble, no explanation, no list of removed tags, no alternatives, no notes."
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 3,
+      "type": "TextGenerate",
+      "pos": [
+        420,
+        0
+      ],
+      "size": [
+        420,
+        720
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 1
+        },
+        {
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "video",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "system_prompt",
+          "shape": 7,
+          "type": "STRING",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "generated_text",
+          "type": "STRING",
+          "links": [
+            3
+          ]
+        },
+        {
+          "name": "thinking",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "IDEA - type your short idea in the prompt box",
+      "properties": {
+        "Node name for S&R": "TextGenerate",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        },
+        "cnr_id": "comfy-core",
+        "ver": "0.25.0"
+      },
+      "widgets_values": [
+        "A digital illustration rendered in a soft, painterly style with muted warm tones of orange, yellow, and blue. The artwork features smooth yet subtly textured surfaces, mimicking the gentle blending of watercolor or ink wash techniques, with delicate gradients that create depth and mood. a tall, skeletal figure in profile facing right against an abstract, textured background. The subject possesses a long, bird-like skull with dark eye sockets and a sharp, pointed beak. A large, blocky red headpiece rests atop the skull, showing cracked white textures on its surface. Long, flowing strands of vibrant orange and deep red hair or fabric trail behind the figure, sweeping upward and to the left in dynamic, wind-swept curves. The torso is composed of layered, dark charcoal and black organic shapes that resemble tattered cloth or hardened carapace. A pale, slender arm extends forward from the midsection, displaying visible sinew and a weathered, bone-like texture. Thin, wire-like black lines wrap around the neck and head area. The background consists of muted beige and cream tones with broad, gestural brushstrokes in light blue and salmon pink. Large, faint geometric diamond shapes overlap the upper right corner. Lighting is diffuse and lacks a single directional source, creating soft tonal shifts across the figure's textured surfaces. The color palette centers on high-contrast reds and oranges against desaturated neutrals and dark shadows. High-contrast brushwork defines the frayed edges of the garments and the wispy movement of the hair.",
+        512,
+        "on",
+        0.7,
+        64,
+        0.95,
+        0.05,
+        1.05,
+        0,
+        0,
+        true,
+        true,
+        "auto"
+      ],
+      "widgets_values_named": {
+        "prompt": "A digital illustration rendered in a soft, painterly style with muted warm tones of orange, yellow, and blue. The artwork features smooth yet subtly textured surfaces, mimicking the gentle blending of watercolor or ink wash techniques, with delicate gradients that create depth and mood. a tall, skeletal figure in profile facing right against an abstract, textured background. The subject possesses a long, bird-like skull with dark eye sockets and a sharp, pointed beak. A large, blocky red headpiece rests atop the skull, showing cracked white textures on its surface. Long, flowing strands of vibrant orange and deep red hair or fabric trail behind the figure, sweeping upward and to the left in dynamic, wind-swept curves. The torso is composed of layered, dark charcoal and black organic shapes that resemble tattered cloth or hardened carapace. A pale, slender arm extends forward from the midsection, displaying visible sinew and a weathered, bone-like texture. Thin, wire-like black lines wrap around the neck and head area. The background consists of muted beige and cream tones with broad, gestural brushstrokes in light blue and salmon pink. Large, faint geometric diamond shapes overlap the upper right corner. Lighting is diffuse and lacks a single directional source, creating soft tonal shifts across the figure's textured surfaces. The color palette centers on high-contrast reds and oranges against desaturated neutrals and dark shadows. High-contrast brushwork defines the frayed edges of the garments and the wispy movement of the hair.",
+        "max_length": 512,
+        "sampling_mode": "on",
+        "sampling_mode.temperature": 0.7,
+        "sampling_mode.top_k": 64,
+        "sampling_mode.top_p": 0.95,
+        "sampling_mode.min_p": 0.05,
+        "sampling_mode.repetition_penalty": 1.05,
+        "sampling_mode.seed": 0,
+        "sampling_mode.presence_penalty": 0,
+        "thinking": true,
+        "use_default_template": true,
+        "mtp": "auto"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 4,
+      "type": "PreviewAny",
+      "pos": [
+        880,
+        0
+      ],
+      "size": [
+        480,
+        720
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "OUTPUT - copy this prompt",
+      "properties": {
+        "Node name for S&R": "PreviewAny",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        },
+        "cnr_id": "comfy-core",
+        "ver": "0.25.0"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 5,
+      "type": "MarkdownNote",
+      "pos": [
+        0,
+        760
+      ],
+      "size": [
+        840,
+        200
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "How to use",
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "## Krea2 prompt enhancer\n\n1. Paste your rules into the green **RULES** box.\n2. Type a short idea into the **prompt** box on the red node.\n3. Run. Copy the result from **OUTPUT**.\n\nChange the seed (or set it to randomize) for a different version of the same idea. Uses `qwen3vl_4b_fp8_scaled` (the Krea2 text encoder); any model that supports Generate Text works. `max_length` caps the answer in tokens."
+      ],
+      "widgets_values_named": {
+        "text": "## Krea2 prompt enhancer\n\n1. Paste your rules into the green **RULES** box.\n2. Type a short idea into the **prompt** box on the red node.\n3. Run. Copy the result from **OUTPUT**.\n\nChange the seed (or set it to randomize) for a different version of the same idea. Uses `qwen3vl_4b_fp8_scaled` (the Krea2 text encoder); any model that supports Generate Text works. `max_length` caps the answer in tokens."
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 6,
+      "type": "Note",
+      "pos": [
+        -328.62679503327314,
+        166.00494059600533
+      ],
+      "size": [
+        303.9232292876169,
+        413.800990723023
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "\nRules:\n1. Keep the user's subject, mood and any named details. Never drop or replace them.\n2. Write one paragraph of natural, full sentences, 80-150 words. No tag lists, no keyword soup.\n3. Describe in this order: subject and action, setting, medium or style, lighting, color palette, composition and camera.\n4. Say where things are (\"in the foreground\", \"behind her\", \"in the lower third\").\n5. Any text that should appear in the image goes in \"double quotes\".\n6. No negative phrasing (\"no\", \"without\"), no weights like (word:1.2), no artist names.\n7. Output only the final prompt. No title, no explanation, no quotes around the whole thing.\n\n(Replace or extend these with your own Krea2 rules.)"
+      ],
+      "widgets_values_named": {
+        "text": "\nRules:\n1. Keep the user's subject, mood and any named details. Never drop or replace them.\n2. Write one paragraph of natural, full sentences, 80-150 words. No tag lists, no keyword soup.\n3. Describe in this order: subject and action, setting, medium or style, lighting, color palette, composition and camera.\n4. Say where things are (\"in the foreground\", \"behind her\", \"in the lower third\").\n5. Any text that should appear in the image goes in \"double quotes\".\n6. No negative phrasing (\"no\", \"without\"), no weights like (word:1.2), no artist names.\n7. Output only the final prompt. No title, no explanation, no quotes around the whole thing.\n\n(Replace or extend these with your own Krea2 rules.)"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [
+      3,
+      3,
+      0,
+      4,
+      0,
+      "*"
+    ],
+    [
+      1,
+      1,
+      0,
+      3,
+      0,
+      "CLIP"
+    ],
+    [
+      2,
+      2,
+      0,
+      3,
+      4,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.4172488000000005,
+      "offset": [
+        98.23135099617197,
+        138.61904732748837
+      ]
+    },
+    "ue_links": [],
+    "links_added_by_ue": [],
+    "frontendVersion": "1.57.1",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
