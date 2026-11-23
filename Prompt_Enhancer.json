@@ -170,7 +170,7 @@
         "ver": "0.25.0"
       },
       "widgets_values": [
-        "A digital illustration rendered in a soft, painterly style with muted warm tones of orange, yellow, and blue. The artwork features smooth yet subtly textured surfaces, mimicking the gentle blending of watercolor or ink wash techniques, with delicate gradients that create depth and mood. a tall, skeletal figure in profile facing right against an abstract, textured background. The subject possesses a long, bird-like skull with dark eye sockets and a sharp, pointed beak. A large, blocky red headpiece rests atop the skull, showing cracked white textures on its surface. Long, flowing strands of vibrant orange and deep red hair or fabric trail behind the figure, sweeping upward and to the left in dynamic, wind-swept curves. The torso is composed of layered, dark charcoal and black organic shapes that resemble tattered cloth or hardened carapace. A pale, slender arm extends forward from the midsection, displaying visible sinew and a weathered, bone-like texture. Thin, wire-like black lines wrap around the neck and head area. The background consists of muted beige and cream tones with broad, gestural brushstrokes in light blue and salmon pink. Large, faint geometric diamond shapes overlap the upper right corner. Lighting is diffuse and lacks a single directional source, creating soft tonal shifts across the figure's textured surfaces. The color palette centers on high-contrast reds and oranges against desaturated neutrals and dark shadows. High-contrast brushwork defines the frayed edges of the garments and the wispy movement of the hair.",
+        "your prompt goes here",
         512,
         "on",
         0.7,
@@ -185,7 +185,7 @@
         "auto"
       ],
       "widgets_values_named": {
-        "prompt": "A digital illustration rendered in a soft, painterly style with muted warm tones of orange, yellow, and blue. The artwork features smooth yet subtly textured surfaces, mimicking the gentle blending of watercolor or ink wash techniques, with delicate gradients that create depth and mood. a tall, skeletal figure in profile facing right against an abstract, textured background. The subject possesses a long, bird-like skull with dark eye sockets and a sharp, pointed beak. A large, blocky red headpiece rests atop the skull, showing cracked white textures on its surface. Long, flowing strands of vibrant orange and deep red hair or fabric trail behind the figure, sweeping upward and to the left in dynamic, wind-swept curves. The torso is composed of layered, dark charcoal and black organic shapes that resemble tattered cloth or hardened carapace. A pale, slender arm extends forward from the midsection, displaying visible sinew and a weathered, bone-like texture. Thin, wire-like black lines wrap around the neck and head area. The background consists of muted beige and cream tones with broad, gestural brushstrokes in light blue and salmon pink. Large, faint geometric diamond shapes overlap the upper right corner. Lighting is diffuse and lacks a single directional source, creating soft tonal shifts across the figure's textured surfaces. The color palette centers on high-contrast reds and oranges against desaturated neutrals and dark shadows. High-contrast brushwork defines the frayed edges of the garments and the wispy movement of the hair.",
+        "prompt": "your prompt goes here",
         "max_length": 512,
         "sampling_mode": "on",
         "sampling_mode.temperature": 0.7,
@@ -340,10 +340,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1.4172488000000005,
+      "scale": 1.2884080000000004,
       "offset": [
-        98.23135099617197,
-        138.61904732748837
+        432.89052793465225,
+        171.03791980180077
       ]
     },
     "ue_links": [],
